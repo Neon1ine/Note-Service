@@ -12,6 +12,9 @@ import org.springframework.messaging.MessageChannel;
 
 import java.io.File;
 
+/*Данный код представляет хорошо структурированную конфигурацию интеграции в Spring Framework
+Он эффективен и масштабируем, однако требует улучшения в части безопасности, обработки ошибок и читаемости*/
+
 @Configuration
 public class IntegrationConfig {
 
@@ -36,6 +39,8 @@ public class IntegrationConfig {
     @Bean
     @ServiceActivator(inputChannel = "fileWriterChannel")
     public FileWritingMessageHandler messageHandler() {
+        /*Путь до файла лучше вывести в константную переменную и изменить,
+        чтобы код работал не только на устройстве с пользователем "Diman"*/
         FileWritingMessageHandler handler =
                 new FileWritingMessageHandler(new File("C:/Users/Diman/Desktop/Spring/Spring6/files"));
         handler.setExpectReply(false);

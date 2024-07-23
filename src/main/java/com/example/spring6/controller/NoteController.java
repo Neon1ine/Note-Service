@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+/*В целом, данный код является хорошим примером REST-контроллера для работы с задачами. Он хорошо организован,
+легко читается и обеспечивает безопасность и производительность*/
 /**
  * REST Контроллер для работы с задачами.
  */
@@ -41,6 +43,7 @@ public class NoteController {
      */
     @PostMapping
     public ResponseEntity<Note> createNote(@RequestBody Note note) {
+        //Строка кода слишком длинная, возможно стоит ввести новую переменную
         ResponseEntity<Note> finalNote = new ResponseEntity<>(noteServiceImplAdapter.getNoteServiceImpl().createNote(note), HttpStatus.CREATED);
         fileGateWay.writeToFile(finalNote.getBody().getHeading() + ".txt", finalNote.getBody().toString());
         return finalNote;

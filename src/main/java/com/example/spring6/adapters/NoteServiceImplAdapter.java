@@ -16,6 +16,7 @@ public class NoteServiceImplAdapter implements NoteServiceImplAdapterInterface {
 
     private NoteServiceImpl noteServiceImpl;
 
+    //Стоит добавить вывод ошибки при неправильном предоставлении id записи
     @Override
     @TrackUserAction
     public Optional<Note> deleteNote(Long id) {

@@ -48,7 +48,7 @@ public class NoteServiceImpl implements NoteService {
         return noteById;
     }
 
-
+    //Данный код стоит удалить, он уже используется в NoteServiceImplAdapter классе
 //    @Override
 //    @TrackUserAction
 //    public Optional<Note> deleteNote(Long id) {
